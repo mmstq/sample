@@ -60,14 +60,14 @@ class _HomeState extends State<Home> {
         builder: (ctx, snapshot) => Column(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(8, 30, 8, 8),
+              padding: const EdgeInsets.fromLTRB(8, 40, 8, 8),
               child: Row(
                 children: [
                   Expanded(flex: 1, child: Text('Deadline:')),
                   Expanded(
                       flex: 2,
                       child: ElevatedButton(
-                        child: Text("${pickedDate.toLocal()}".split(' ')[0]),
+                        child: Text('${pickedDate.day}.${pickedDate.month}.${pickedDate.year}'),
                         onPressed: () => _selectDate(context),
                       ))
                 ],
@@ -191,7 +191,7 @@ class _HomeState extends State<Home> {
                                     Expanded(
                                       flex: 2,
                                       child: Text(
-                                        '${date.day}-${date.month}-${date.year}',
+                                        '${date.day}.${date.month}.${date.year}',
                                         style: TextStyle(
                                             fontSize: 18,
                                             color: isDue
